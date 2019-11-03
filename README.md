@@ -11,7 +11,7 @@ As well as the pipeline
 By default uses WMI but can also use CIM using the **-UseCIM** parameter.
 ![CIM](/images/CIM.JPG)
 
-It also uses a somewhat accurate percentage of how much work is remaining.
+It also uses a *somewhat* accurate percentage of how much work is remaining.
 ![PC](/images/Percentage.JPG)
 
 The script is also equipped with built in Active Directory support. The following parameters are available as well:
