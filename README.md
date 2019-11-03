@@ -1,5 +1,5 @@
 # Get-DiskDriveInfo
-A PowerShell script that retrieves hard disk info via WMI/CIM calls.
+A PowerShell script that retrieves all hard disk info via WMI/CIM calls.
 
 It accepts multiple PC names from the command line.
 
