@@ -19,4 +19,5 @@ The script is also equipped with built in Active Directory support. The followin
 2. **-ServersOnly** - *(Queries AD for all PCs that DO have the "server" keyword in their OS attribute)*
 3. **-SpecifyOU** - *(Reads in a specific OU and only grabs the computer names from there)*
 
-
+By default the script will not output any files but the parameter **-OutputFile** is available for use.
+![output](/images/Output.PNG)
