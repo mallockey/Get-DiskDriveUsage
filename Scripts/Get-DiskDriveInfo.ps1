@@ -44,7 +44,6 @@ if($SpecifyOU -or $WorkstationsOnly -or $ServersOnly){
 }
 
   $resultsArray = @()
-
   $objProp = [Ordered]@{
     ComputerName = $null
     DriveLetter = $null
@@ -71,7 +70,6 @@ function get-DiskStats {
   }catch{
     $allDriveInfo = $null
   }
-
   return $allDriveInfo
 }
 
@@ -94,8 +92,9 @@ for($i=0; $i -lt $allComputers.length; $i++){
         if($drive.DriveType -ne 3){
           continue
         }
-    
+ 
         $computerObj = New-Object -TypeName PSObject -Prop $objProp
+        $computerObj.ComputerName = $currentComputer
       
         $freeSpace = ([int]($drive.FreeSpace / 1gb))
         $freeSpaceString = $freeSpace.ToString() + "GBs"
@@ -106,13 +105,12 @@ for($i=0; $i -lt $allComputers.length; $i++){
         $percentFree = ([Int](($freeSpace / $totalSpace) * 100))
         $percentFreeString = $percentFree.ToString() + "%"
 
-        $computerObj.FreeSpace = $freeSpaceString     
-        $computerObj.ComputerName = $currentComputer
         $computerObj.Online = "Online"
         $computerObj.DriveLetter = $drive.DeviceID
         $computerObj.DriveLabel = $drive.VolumeName
         $computerObj.TotalSpace = $totalSpaceString
         $computerObj.PercentFree = $percentFreeString
+        $computerObj.FreeSpace = $freeSpaceString 
         $computerObj.Status = "OK"
 
         if ($percentFree -lt 10){
@@ -132,7 +130,7 @@ for($i=0; $i -lt $allComputers.length; $i++){
       }
       $computerObj.Online = "Online"
       $resultsArray += $computerObj
-
+      
     }
   }else{
 
