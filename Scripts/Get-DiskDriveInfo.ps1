@@ -20,7 +20,7 @@ if($SpecifyOU -or $WorkstationsOnly -or $ServersOnly){
   }
   if($SpecifyOU){
     try{
-      $allComputers = (Get-ADComputer -Filter * -SearchBase $SpecifyOU).Name
+      $allComputers = (Get-ADComputer -Filter {Enabled -eq $True} -SearchBase $SpecifyOU).Name
     }
     catch{
       Write-Warning "OU not correct please verify OU and rerun."
@@ -44,6 +44,7 @@ if($SpecifyOU -or $WorkstationsOnly -or $ServersOnly){
 }
 
   $resultsArray = @()
+
   $objProp = [Ordered]@{
     ComputerName = $null
     DriveLetter = $null
@@ -70,16 +71,17 @@ function get-DiskStats {
   }catch{
     $allDriveInfo = $null
   }
+
   return $allDriveInfo
 }
 
-for($i=0; $i -lt $allComputers.length; $i++){
+$counter = 0
+foreach($currentComputer in $allComputers){
 
-  [Int]$currentPercent = ($i / $allComputers.length) * 100
-  Write-Progress -Activity "Getting disk info from $($allComputers[$i])" -CurrentOperation "$currentPercent% completed"
+  [Int]$currentPercent = ($counter / $allComputers.length) * 100
+  Write-Progress -Activity "Getting disk info from $($currentComputer)" -CurrentOperation "$currentPercent% completed"
   
   $computerObj = New-Object -TypeName PSObject -Prop $objProp
-  $currentComputer = $allComputers[$i]
   $computerObj.ComputerName = $currentComputer
 
   if(Test-Connection $currentComputer -Quiet -Count 1){
@@ -92,9 +94,8 @@ for($i=0; $i -lt $allComputers.length; $i++){
         if($drive.DriveType -ne 3){
           continue
         }
- 
+    
         $computerObj = New-Object -TypeName PSObject -Prop $objProp
-        $computerObj.ComputerName = $currentComputer
       
         $freeSpace = ([int]($drive.FreeSpace / 1gb))
         $freeSpaceString = $freeSpace.ToString() + "GBs"
@@ -105,18 +106,18 @@ for($i=0; $i -lt $allComputers.length; $i++){
         $percentFree = ([Int](($freeSpace / $totalSpace) * 100))
         $percentFreeString = $percentFree.ToString() + "%"
 
+        $computerObj.FreeSpace = $freeSpaceString     
+        $computerObj.ComputerName = $currentComputer
         $computerObj.Online = "Online"
         $computerObj.DriveLetter = $drive.DeviceID
         $computerObj.DriveLabel = $drive.VolumeName
         $computerObj.TotalSpace = $totalSpaceString
         $computerObj.PercentFree = $percentFreeString
-        $computerObj.FreeSpace = $freeSpaceString 
         $computerObj.Status = "OK"
 
         if ($percentFree -lt 10){
           $computerObj.Status = "LOW"
         }
-
         $resultsArray += $computerObj
       }
     }else{
@@ -128,15 +129,17 @@ for($i=0; $i -lt $allComputers.length; $i++){
       }else{
         $computerObj.Status = "Unable to get disk info via WMI"
       }
+
       $computerObj.Online = "Online"
       $resultsArray += $computerObj
-      
     }
+
   }else{
 
     $computerObj.Online = "Offline"
     $resultsArray += $computerObj
   }
+  $counter++
 }
 
 $resultsArray | Sort-Object Online -Descending | Format-Table
