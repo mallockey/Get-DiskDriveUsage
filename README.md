@@ -18,13 +18,13 @@ Install from by typing in the below at an elevated PowerShell window:
 ## Usage
 The script accepts multiple PC names from the command line.
 
-![PC](/images/MultiplePCNames.JPG)
+![PC](/images/MultiplePCs.png)
 
 As well as the pipeline
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
 
 By default uses WMI but can also use CIM using the **-UseCIM** parameter.
-![CIM](/images/CIM.JPG)
+![CIM](/images/CIM.PNG)
 
 It also uses a *somewhat* accurate percentage of how much work is remaining.
 ![PC](/images/Percentage.JPG)
