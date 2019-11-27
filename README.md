@@ -11,12 +11,12 @@ and has Active Directory features.
  - Made return value simply the array of objects so it is not converted to table data.
 
 
-<h2>Installing the script</h2>
+## Installing the script
 Install from by typing in the below at an elevated PowerShell window:
 
 `Install-Script -Name Get-DiskDriveUsage`
-
-It accepts multiple PC names from the command line.
+## Usage
+The script accepts multiple PC names from the command line.
 
 ![PC](/images/MultiplePCNames.JPG)
 
