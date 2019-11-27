@@ -12,13 +12,13 @@ and has Active Directory features.
 
 
 ## Installing the script
-Install from by typing in the below at an elevated PowerShell window:
+Install by typing in the below at an elevated PowerShell window:
 
 `Install-Script -Name Get-DiskDriveUsage`
-## Usage
+## Features
 The script accepts multiple PC names from the command line.
 
-![PC](/images/multiplePCs.PNG)
+`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01`
 
 As well as the pipeline
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
