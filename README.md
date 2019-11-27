@@ -4,12 +4,13 @@
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls for multiple computers
 and has Active Directory features.
 
-
+<h2>
+ Updates
 11/27/19: 
 -Change from a module to a single script.
 - Removed from function
 - Made return value simply the array of objects so it is not converted to table data.
-
+</h2>
 
 <h2>Installing the script</h2>
 Install from by typing in the below at an elevated PowerShell window:
