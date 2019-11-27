@@ -17,7 +17,9 @@ Install by typing in the below at an elevated PowerShell window:
 `Install-Script -Name Get-DiskDriveUsage`
 ## Features
 The script will get all hard drive usage for each computer:
+
 ![Usage](/images/EachDrive.PNG)
+
 The script accepts multiple PC names from the command line:
 
 `Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01`
