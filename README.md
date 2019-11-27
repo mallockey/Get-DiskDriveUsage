@@ -16,15 +16,18 @@ Install by typing in the below at an elevated PowerShell window:
 
 `Install-Script -Name Get-DiskDriveUsage`
 ## Features
-The script accepts multiple PC names from the command line.
+The script will get all hard drive usage for each computer:
+![Usage](/images/EachDrive.PNG)
+The script accepts multiple PC names from the command line:
 
 `Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01`
 
-As well as the pipeline
+As well as the pipeline:
 
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
 
-By default uses WMI but can also use CIM using the **-UseCIM** parameter.
+By default uses WMI but can also use CIM using the **-UseCIM** parameter:
+
 `Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -UseCIM`
 
 It also uses a *somewhat* accurate percentage of how much work is remaining.
@@ -37,4 +40,4 @@ The script is also equipped with built in Active Directory support. The followin
 
 By default the script will not output any files but the parameter **-OutputFile** is available for use.
 
-`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutFile "C:\Kits\HardDriveInfo.csv`
+`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutFile "C:\Kits\HardDriveInfo.csv"`
