@@ -1,4 +1,6 @@
-# Get-DiskDriveInfo
+# Get-DiskDriveUsage
+**Updated on 11/27/19 to return just array of objects instead of formatting a table. This will allow the script to be put in a variable 
+and have all its properties**
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls.
 
 It accepts multiple PC names from the command line.
