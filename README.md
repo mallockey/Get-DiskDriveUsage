@@ -21,6 +21,7 @@ The script accepts multiple PC names from the command line.
 `Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01`
 
 As well as the pipeline
+
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
 
 By default uses WMI but can also use CIM using the **-UseCIM** parameter.
@@ -35,4 +36,5 @@ The script is also equipped with built in Active Directory support. The followin
 3. **-SpecifyOU** - *(Reads in a specific OU and only grabs the computer names from there)*
 
 By default the script will not output any files but the parameter **-OutputFile** is available for use.
-``Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutFile "C:\Kits\HardDriveInfo.csv`
+
+`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutFile "C:\Kits\HardDriveInfo.csv`
