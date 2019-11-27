@@ -18,7 +18,7 @@ Install from by typing in the below at an elevated PowerShell window:
 ## Usage
 The script accepts multiple PC names from the command line.
 
-![PC](/images/multiplePCs.png)
+![PC](/images/multiplePCs.PNG)
 
 As well as the pipeline
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
