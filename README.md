@@ -4,7 +4,7 @@ and have all its properties. It is also only a script now, not a module.**
 
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls.
 
-**Installing the script**
+<h2>**Installing the script**<h2>
 Install from the PowerShell Gallery by typing in the below at an elevated PowerShell window:
 
 `Install-Script -Name Get-DiskDriveUsage`
