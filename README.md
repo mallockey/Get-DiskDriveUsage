@@ -35,4 +35,4 @@ The script is also equipped with built in Active Directory support. The followin
 3. **-SpecifyOU** - *(Reads in a specific OU and only grabs the computer names from there)*
 
 By default the script will not output any files but the parameter **-OutputFile** is available for use.
-![output](/images/Output.PNG)
+![output](/images/OutputFile.PNG)
