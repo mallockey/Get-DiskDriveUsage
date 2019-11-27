@@ -193,3 +193,4 @@ Param(
     }
     $resultsArray | Sort-Object Online -Descending | Export-Csv $outputFile -NoTypeInformation
   }
+
