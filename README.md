@@ -20,11 +20,12 @@ The script will get all hard drives usage for each computer:
 
 ![Usage](/images/EachDrive.PNG)
 
-It accepts multiple PC names from the command line:
+It accepts multiple PC names from the -ComputerName parameter as well as a text file with the -InputFile parameter:
 
-`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01`
+`Get-DiskDriveUsage.ps1 -ComputerName Josh-LT-01, Josh-LT-01`
+`Get-DiskDriveUsage.ps1 -InputFile "C:\Kits\Computers.txt"`
 
-As well as the pipeline:
+And the pipeline:
 
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
 
