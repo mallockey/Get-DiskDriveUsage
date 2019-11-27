@@ -4,6 +4,10 @@ and have all its properties**
 
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls.
 
+**Installing the script**
+Install from the PowerShell Gallery by typing in the below at an elevated PowerShell window:
+*(Install-Script -Name Get-DiskDriveUsage)*
+
 It accepts multiple PC names from the command line.
 
 ![PC](/images/MultiplePCNames.JPG)
