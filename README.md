@@ -1,12 +1,13 @@
 # Get-DiskDriveUsage
 **Updated on 11/27/19 to return just array of objects instead of formatting a table. This will allow the script to be put in a variable 
-and have all its properties**
+and have all its properties. It is also only a script now, not a module.**
 
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls.
 
 **Installing the script**
 Install from the PowerShell Gallery by typing in the below at an elevated PowerShell window:
-*(Install-Script -Name Get-DiskDriveUsage)*
+
+`Install-Script -Name Get-DiskDriveUsage`
 
 It accepts multiple PC names from the command line.
 
