@@ -6,13 +6,13 @@ and has Active Directory features.
 
 <h2>Updates</h2>
 11/27/19: 
-*Change from a module to a single script.
-*Removed from function
-*Made return value simply the array of objects so it is not converted to table data.
+* Change from a module to a single script.
+* Removed from function
+* Made return value simply the array of objects so it is not converted to table data.
 
 
 <h2>Installing the script</h2>
-Install from the PowerShell Gallery by typing in the below at an elevated PowerShell window:
+Install from by typing in the below at an elevated PowerShell window:
 
 `Install-Script -Name Get-DiskDriveUsage`
 
