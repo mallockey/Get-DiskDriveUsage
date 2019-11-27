@@ -1,7 +1,11 @@
 # Get-DiskDriveUsage
-**Updated on 11/27/19 to return just array of objects instead of formatting a table. This will allow the script to be put in a variable 
-and have all its properties. It is also only a script now, not a module.**
-
+<h2>Updates</h2>
+11/27/19: 
+*Change from a module to a single script.
+*Removed from function
+*Made return value simply the array of objects so it is not converted to table data.
+ 
+<h2>Description</h2>
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls.
 
 <h2>Installing the script</h2>
