@@ -24,7 +24,7 @@ As well as the pipeline
 `"Josh-LT-01" | Get-DiskDriveInfo.ps1` 
 
 By default uses WMI but can also use CIM using the **-UseCIM** parameter.
-![CIM](/images/CIM.PNG)
+`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -UseCIM`
 
 It also uses a *somewhat* accurate percentage of how much work is remaining.
 ![PC](/images/Percentage.JPG)
@@ -35,4 +35,4 @@ The script is also equipped with built in Active Directory support. The followin
 3. **-SpecifyOU** - *(Reads in a specific OU and only grabs the computer names from there)*
 
 By default the script will not output any files but the parameter **-OutputFile** is available for use.
-![output](/images/OutputFile.PNG)
+``Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutFile "C:\Kits\HardDriveInfo.csv`
