@@ -4,7 +4,7 @@
 A PowerShell script that retrieves all hard disk info via WMI/CIM calls for multiple computers
 and has Active Directory features.
 
-<h2>Updates</h2>
+
 11/27/19: 
 -Change from a module to a single script.
 - Removed from function
