@@ -44,4 +44,4 @@ The script is also equipped with built in Active Directory support. The followin
 
 By default the script will not output any files but the parameter **-OutputFile** is available for use.
 
-`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutFile "C:\Kits\HardDriveInfo.csv"`
+`Get-DiskDriveUsage -ComputerName Josh-LT-01, Josh-LT-01 -OutputFile "C:\Kits\HardDriveInfo.csv"`
