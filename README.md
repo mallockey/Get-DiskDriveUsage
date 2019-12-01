@@ -38,9 +38,9 @@ It also uses a *somewhat* accurate percentage of how much work is remaining.
 ![PC](/images/Percentage.JPG)
 
 The script is also equipped with built in Active Directory support. The following parameters are available as well:
-1. **-WorkstationsOnly** - *(Queries AD for all PCs that don't have the "Server" keyword in their OS attribute)* 
-2. **-ServersOnly** - *(Queries AD for all PCs that DO have the "server" keyword in their OS attribute)*
-3. **-SpecifyOU** - *(Reads in a specific OU and only grabs the computer names from there)*
+1. **WorkstationsOnly** - *(Queries AD for all PCs that don't have the "Server" keyword in their OS attribute)* 
+2. **ServersOnly** - *(Queries AD for all PCs that DO have the "server" keyword in their OS attribute)*
+3. **SpecifyOU** - *(Reads in a specific OU and only grabs the computer names from there)*
 
 By default the script will not output any files but the parameter **-OutputFile** is available for use.
 
